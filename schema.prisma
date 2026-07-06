@@ -1,0 +1,21 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://neondb_owner:Lange047%26@ep-still-mouse-acd1nsal.sa-east-1.aws.neon.tech/neondb?sslmode=require"
+}
+
+generator client {
+  provider             = "prisma-client-py"
+  interface            = "asyncio"
+}
+
+model Orcamento {
+  id           String   @id @default(uuid())
+  nomeCliente  String
+  whatsapp     String
+  aparelho     String
+  defeito      String
+  precoEst     Float
+  tempoEst     String
+  status       String   @default("Pendente")
+  createdAt    DateTime @default(now())
+}
