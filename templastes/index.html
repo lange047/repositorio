@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lange Reparos</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-center items-center p-4">
+    <div class="bg-slate-900 border border-purple-500/20 rounded-2xl p-6 shadow-2xl max-w-md w-full">
+        <h2 class="text-2xl font-bold text-center mb-6 text-purple-400">Lange Reparos</h2>
+        <form action="/enviar-orcamento" method="POST" class="space-y-4">
+            <div>
+                <label class="block text-xs uppercase font-semibold text-slate-400 mb-1">Seu Nome</label>
+                <input type="text" name="nome" required class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div>
+                <label class="block text-xs uppercase font-semibold text-slate-400 mb-1">Seu WhatsApp</label>
+                <input type="text" name="whatsapp" required placeholder="(47) 99999-9999" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div>
+                <label class="block text-xs uppercase font-semibold text-slate-400 mb-1">Modelo do Celular</label>
+                <input type="text" name="aparelho" required placeholder="Ex: iPhone 11, Moto G20" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-purple-500">
+            </div>
+            <div>
+                <label class="block text-xs uppercase font-semibold text-slate-400 mb-1">Defeito Relatado</label>
+                <select name="defeito" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-sm text-slate-300 focus:outline-none focus:border-purple-500">
+                    <option value="Troca de Tela">Tela Quebrada / Sem Imagem</option>
+                    <option value="Troca de Bateria">Bateria Viciada / Estufada</option>
+                    <option value="Conector de Carga">Não Carrega / Mau Contato</option>
+                    <option value="Outro Defeito">Outro Defeito (Avaliar)</option>
+                </select>
+            </div>
+            <button type="submit" class="w-full bg-purple-600 hover:bg-purple-500 font-bold py-3 rounded-lg transition-all text-sm cursor-pointer shadow-lg shadow-purple-600/20">
+                Solicitar Orçamento
+            </button>
+        </form>
+    </div>
+</body>
+</html>
